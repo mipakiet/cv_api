@@ -1,0 +1,16 @@
+cv
+-technology_name str
+-skill small_int
+-expiriance text
+
+user
+-name str
+-password str
+-email str
+-fk -> cv
+-account_type small_int
+
+Dict account types:
+100-employee
+200-staff
+900-admin
