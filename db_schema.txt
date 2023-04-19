@@ -1,0 +1,37 @@
+Table user{
+  name varchar
+  password varchar
+  email varchar
+  account_type integer
+  cv_id integer
+}
+
+//Dict account types:
+//100-employee
+//200-staff
+//900-admin
+
+
+Table cv {
+  id integer [primary key]
+  skill_id integer
+  experience_id integer
+}
+
+Table skill{
+  id integer [primary key]
+  name varchar
+  points integer
+}
+
+Table experience{
+  id integer [primary key]
+  company_name varchar
+  description varchar
+  start_date date
+  end_date date
+}
+
+Ref: cv.skill_id < skill.id
+Ref: cv.experience_id < experience.id
+Ref: user.cv_id - cv.id
